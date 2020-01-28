@@ -1,0 +1,2 @@
+The we used as a key in hashmap need to be immutable but in this case the employee class is not immutable.
+We have to make our class immutable inorder for the class to used as key in hashmap.

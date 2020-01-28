@@ -1,0 +1,3 @@
+We didn't override the equals method of Object
+We only specifay Employee Equal
+We have to override the object equal since the List contains method uses Object equals.

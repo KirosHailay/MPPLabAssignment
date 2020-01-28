@@ -1,0 +1,2 @@
+The program we have logical error due to the reason that we override the equals but not the
+The hash code. since we are using the hashmap the equals and hashcode has to be consistent.

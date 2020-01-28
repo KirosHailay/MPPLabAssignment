@@ -1,0 +1,5 @@
+It happen due to:
+we do have separate equals method for superclass and subclass and since that method is also implemented using instance of
+strategy. so in case of the superclass object it's going to work fine because the subclass is instance of superclass.
+but it doesn't work vice versa since the subclass has it's own equal method not only checks the name but also salary but
+it return false immediately after check is instance condition since person is not instance of person with job.
