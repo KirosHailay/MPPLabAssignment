@@ -7,6 +7,9 @@ import java.util.stream.Stream;
 public class StreamDemo {
     public static  void main(String [] args) {
 
+        String[] arrayOfWords = {"Goodbye", "World"};
+        Stream<String> streamOfwords = Arrays.stream(arrayOfWords);
+        streamOfwords.forEach(System.out::print);
         System.out.println("FlatMap");
 //        Stream<Integer> res = Stream.of(1, 2,3)
         List<String> list = new ArrayList<>(
@@ -88,8 +91,21 @@ public class StreamDemo {
         Optional<Integer> sum1 = num.stream().reduce(Integer::sum);
         System.out.println("Sum1 is: " + sum1);
         Stream<String> str1 = Stream.of("A", "good", "day","to", "write", "some", "Java");
+//        str1.map(s -> (" ")).forEach(System.out::print);
 //       Optional<String> result = str1.reduce(s,tlk)
 //       System.out.println(result);
+        String s43 = Stream.of("A", "good", "day", "to", "write", "some", "Java").collect(Collectors.joining(","));
+        System.out.println(s43);
+       String s = Stream.of("A", "good", "day", "to", "write", "some", "Java").map(x -> x+" ").reduce("", String::concat);
+       System.out.println(s);
+
+       // other solution 9.4
+        System.out.println(
+                Stream.of("A", "good", "day", "to", "write", "some", "Java", "code")
+                        .reduce("", (z, t) ->
+                                (new StringBuilder(z)).append(t+" ").toString()));
+
+
 
     }
 }
