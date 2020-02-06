@@ -2,13 +2,14 @@ package Lab10.prob2;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class SecondSmallest {
 
     static <T extends Comparable<? super T>> T secondSmallest(List<T> list){
-        return list.stream().sorted().distinct().skip(1).min(T::compareTo).get();
+        return list.stream().sorted().distinct().skip(1).limit(1).collect(Collectors.toList()).get(0);
     }
 
     public static void main(String [] args) {

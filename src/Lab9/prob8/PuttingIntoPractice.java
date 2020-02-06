@@ -1,9 +1,6 @@
 package Lab9.prob8;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,7 +17,7 @@ public class PuttingIntoPractice{
 		List<Transaction> transactions = Arrays.asList(
             new Transaction(brian, 2011, 300), 
             new Transaction(raoul, 2012, 1000),
-            new Transaction(raoul, 2011, 400),
+            new Transaction(raoul, 2011, 40),
             new Transaction(mario, 2012, 710),	
             new Transaction(mario, 2012, 700),
             new Transaction(alan, 2012, 950)

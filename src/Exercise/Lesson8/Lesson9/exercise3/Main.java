@@ -46,7 +46,10 @@ public class Main {
 		Stream.generate(A::new).limit(10).forEach(System.out::println);
 //		s.forEach(System.out::println);
 		//sorting code here
-		Collections.sort(accounts, Comparator.comparing(Account::getBalance).thenComparing(Account::getOwnerName));
+		System.out.println("----------------------------");
+		System.out.println(accounts);
+		Collections.sort(accounts, Comparator.comparing(Account::getBalance).thenComparing(Account::getOwnerName).reversed());
+//		Collections.sort(accounts, Comparator.comparing(Account::getBalance).thenComparing(Account::getOwnerName));
 		System.out.println(accounts);
 		MyF f = new MyF();
 		List<Integer> n = Arrays.asList(1, 2, 3, 4,5, 6, 7);

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ProductInfo {
 
-   public  static enum SortMethod {BYPRICE, BYTITLE};
+   public   enum SortMethod {BYPRICE, BYTITLE};
 
     public static void sort(List<Product> list, SortMethod sortMethod) {
         class ProductSort implements Comparator<Product> {

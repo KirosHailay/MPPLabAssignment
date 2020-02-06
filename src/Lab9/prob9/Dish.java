@@ -1,5 +1,8 @@
 package Lab9.prob9;
+import java.math.BigInteger;
 import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class Dish {
 
@@ -58,9 +61,22 @@ public class Dish {
         boolean find = menu.stream().anyMatch(m-> m.getCalories()<1000);
         System.out.println("Is there any healthy menu have calories less than 1000? "+find);
 
-//        c. Is there any unhealthy menu have calories greater than 1000 ( return type boolean)
+        // c. Is there any unhealthy menu have calories greater than 1000 ( return type boolean)
         boolean find2 = menu.stream().anyMatch(m-> m.getCalories()>1000);
         System.out.println("Is there any unhealthy menu have calories greater than 1000? " + find2);
+
+    // d. find and return the first item for the type of MEAT( return type Optional<Dish>)
+        menu.stream().filter(d->d.getType().equals(Type.MEAT)).findFirst();
+
+
+    // e. calculateTotalCalories() in the menu using reduce. (return int)
+     menu.stream().map(d->d.getCalories()).reduce((x,y)->x+y).get();
+
+
+    // f. calculateTotalCaloriesMethodReference()in the menu using MethodReferences. (return int)
+        menu.stream().map(d->d.getCalories()).reduce(Integer::sum).get();
+
+
 
     }
 }
